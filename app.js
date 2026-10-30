@@ -129,12 +129,11 @@
 // console.log(deleteUser(users, 4));
 // console.log(users);
 
-// Bugun uyda bo'lmayman Kechgi payt bajarib yuklab qo'yaman bugundan qolmaydi
 //=======================================================================
 
 // function namuna(str) {
 //   let [teg, count] = str.split("*");
-//   return `<${teg}></${teg}`.repeat(count);
+//   return `<${teg}></${teg}>`.repeat(count);
 // }
 
 // console.log(namuna("div*2"));
@@ -260,14 +259,14 @@
 // 110.Funksiya string qabul qiladi.Funksiya ushbu stringda
 // nechta katta harf ishtirok etganin qaytarsin.
 
-function kattaniSana(str) {
-  let count = 0;
-  for (let i of str) {
-    let kod = i.charCodeAt();
-    if (kod >= 65 && kod <= 90) {
-      count++;
-    }
-  }
-  return count;
-}
-console.log(kattaniSana("werYwHUI"));
+// function kattaniSana(str) {
+//   let count = 0;
+//   for (let i of str) {
+//     let kod = i.charCodeAt();
+//     if (kod >= 65 && kod <= 90) {
+//       count++;
+//     }
+//   }
+//   return count;
+// }
+// console.log(kattaniSana("werYwHUI"));
