@@ -91,28 +91,40 @@ const users = [
   },
 ];
 
-function addUser(arr, name, lastname, age, job, email, password, users) {
-  let user_id = users.map((item) => item.id).at(-1);
-  let newUser = {
-    id: user_id + 1,
-    lastname,
-    age,
-    job,
-    email,
-    password,
-  };
-  return [...users, newUser];
+// function addUser(arr, name, lastname, age, job, email, password, users) {
+//   let user_id = users.map((item) => item.id).at(-1);
+//   let newUser = {
+//     id: user_id + 1,
+//     lastname,
+//     age,
+//     job,
+//     email,
+//     password,
+//   };
+//   return [...users, newUser];
+// }
+
+// console.log(
+//   addUser(
+//     users,
+//     "john doe",
+//     "macgregor",
+//     34,
+//     "boxer",
+//     "johndoe@gmail.com",
+//     "1234",
+//     users,
+//   ),
+// );
+
+function deleteUser(users, id) {
+  for (let i of users) {
+    if (i.id === id) {
+      return delete users.i;
+    }
+  }
+  return users;
 }
 
-console.log(
-  addUser(
-    users,
-    "john doe",
-    "macgregor",
-    34,
-    "boxer",
-    "johndoe@gmail.com",
-    "1234",
-    users,
-  ),
-);
+console.log(deleteUser(users, 4));
+console.log(users);
