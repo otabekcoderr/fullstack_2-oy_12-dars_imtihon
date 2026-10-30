@@ -130,6 +130,14 @@
 // console.log(users);
 
 // Bugun uyda bo'lmayman Kechgi payt bajarib yuklab qo'yaman bugundan qolmaydi
+//=======================================================================
+
+// function namuna(str) {
+//   let [teg, count] = str.split("*");
+//   return `<${teg}></${teg}`.repeat(count);
+// }
+
+// console.log(namuna("div*2"));
 
 //=======================================================================
 
@@ -152,7 +160,7 @@
 // oralig’ida bo’lsa funksiya true qaytarsin, aks holda false
 
 // function oraliqdami(num, obj) {
-//   return num > obj.min && num < obj.max;
+//   return num >= obj.min && num <= obj.max;
 // }
 // console.log(oraliqdami(0, { min: 0, max: 5 }));
 
@@ -184,7 +192,8 @@
 // shakari bor ichimliklar ro’yxati:
 
 // function suvniQaytar(arr) {
-//   return arr.includes("water") ? ["water"] : [];
+//   let shakarli = ["cola", "fanta"];
+//   return arr.filter((item) => !shakarli.includes(item));
 // }
 
 // console.log(suvniQaytar(["fanta", "cola", "water"]));
@@ -194,20 +203,71 @@
 // 106.Funksiya son qabul qilsa, Funksiya ushbu sonda nechta
 // raqam borligini qaytarsin.
 
-function raqamniSana(nums) {
-  if (nums !== 0 && typeof nums !== "string") {
-    let num = Math.abs(nums);
-    let count = 0;
-    while (num > 0) {
-      num = Math.floor(num / 10);
+// function raqamniSana(nums) {
+//   if (typeof nums !== "string") {
+//     return String(Math.abs(nums)).length;
+//   } else {
+//     return "raqam kiriting";
+//   }
+// }
+
+// console.log(raqamniSana(2342));
+
+//=======================================================================
+
+// 107.Funksiya son qabu qilsa, ushbu funksiya sonning raqamlari
+// o’rni istalgancha almashtirib eng katta hosil bo’lishi mumkin
+// bo’lgan sonni qaytarsin
+
+// function minToMax(num) {
+//   let raqam = String(num).split("");
+//   let max = raqam.sort((a, b) => b - a);
+//   return Number(max.join(""));
+// }
+
+// console.log(minToMax(234));
+
+//=======================================================================
+
+// 108.Funksiya 2ta sonlar oralig’ini qabul qiladi. Funksiya ushbu
+// oraliqdan bironta random son qaytarsin.
+
+// function random(min, max) {
+//   return Math.floor(Math.random() * (max - min + 1) + min);
+// }
+// console.log(random(1, 10));
+
+//=======================================================================
+
+// 109.Funksiya son qabul qiladi. Ushbu funksiya ushbu son narissistik son bo’lsa true qaytarsin, aks holda false. Narissistik son
+// degani sonning har bir raqamini sonning uzunligi miqdorida
+// darajaga ko’tarib qo’shib chiqilganda o’ziga teng bo’lgan son
+
+// function narissistik(num) {
+//   let raqam = String(num);
+//   let m = raqam.length;
+//   let sum = 0;
+//   for (let i of raqam) {
+//     sum += Number(i) ** m;
+//   }
+//   return sum === num;
+// }
+
+// console.log(narissistik(1652));
+
+//=======================================================================
+
+// 110.Funksiya string qabul qiladi.Funksiya ushbu stringda
+// nechta katta harf ishtirok etganin qaytarsin.
+
+function kattaniSana(str) {
+  let count = 0;
+  for (let i of str) {
+    let kod = i.charCodeAt();
+    if (kod >= 65 && kod <= 90) {
       count++;
     }
-    return count;
-  } else if (typeof nums === "string") {
-    return "matn bo'lmasligi kerak";
-  } else {
-    return 0;
   }
+  return count;
 }
-
-console.log(raqamniSana(""));
+console.log(kattaniSana("werYwHUI"));
