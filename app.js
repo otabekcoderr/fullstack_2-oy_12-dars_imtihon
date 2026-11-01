@@ -219,12 +219,20 @@
 // bo’lgan sonni qaytarsin
 
 // function minToMax(num) {
-//   let raqam = String(num).split("");
-//   let max = raqam.sort((a, b) => b - a);
-//   return Number(max.join(""));
+//   let raqam = String(num);
+//   if (raqam.startsWith("-")) {
+//     let max = raqam
+//       .slice(1)
+//       .split("")
+//       .sort((a, b) => a - b);
+//     return -Number(max.join(""));
+//   } else {
+//     let max = raqam.split("").sort((a, b) => b - a);
+//     return Number(max.join(""));
+//   }
 // }
 
-// console.log(minToMax(234));
+// console.log(minToMax("001"));
 
 //=======================================================================
 
@@ -242,17 +250,21 @@
 // degani sonning har bir raqamini sonning uzunligi miqdorida
 // darajaga ko’tarib qo’shib chiqilganda o’ziga teng bo’lgan son
 
-// function narissistik(num) {
-//   let raqam = String(num);
-//   let m = raqam.length;
-//   let sum = 0;
-//   for (let i of raqam) {
-//     sum += Number(i) ** m;
-//   }
-//   return sum === num;
-// }
+function narissistik(num) {
+  if (num < 0) {
+    return false;
+  }
+  let raqam = String(num);
 
-// console.log(narissistik(1652));
+  let m = raqam.length;
+  let sum = 0;
+  for (let i of raqam) {
+    sum += Number(i) ** m;
+  }
+  return sum === num;
+}
+
+console.log(narissistik(1652));
 
 //=======================================================================
 
